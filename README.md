@@ -5,3 +5,5 @@ These challenges were given out in grade 11 ICS, but I could only complete a few
 The challenges can be found [here](https://github.com/mrseidel-classes/archives/tree/master/ICS3U/ICS3U-2016-2017F/Challenges).
 
 I begin with the third challenge in the second folder.
+
+
