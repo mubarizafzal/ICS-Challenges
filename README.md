@@ -6,4 +6,5 @@ The challenges can be found [here](https://github.com/mrseidel-classes/archives/
 
 I begin with the third challenge in the second folder.
 
+02-3 : Random Rectangles
 ![02-3.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/02-3.png)
