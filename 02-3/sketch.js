@@ -79,12 +79,12 @@ function yCollides (val, x, w, arr, yLimit) {
 
 function randomRectangles (w, h) {
 
-  let Max = 150;
+  let MAX = 150;
   let arrX = [];
   let arrY = [];
 
 
-  for (let i = 0; i < Max; i++) {
+  for (let i = 0; i < MAX; i++) {
     let ranX = Math.floor(Math.random()*w);
     let ranY = Math.floor(Math.random()*h);
     
