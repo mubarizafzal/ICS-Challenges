@@ -2,7 +2,7 @@
  * Problem: Create a program that draws between 80 and 120 points (randomly chosen) to the screen.
  * Have the program connect the dots using lines; however, you can only generate non-overlapping triangles.
  * 
- * Notes: program is slow
+ * Notes: Uses Delaunay Triangulation. The program is slow.
  * 
  * 
  */
@@ -15,22 +15,21 @@ function setup () {
 function draw () {
   noLoop();
   strokeWeight(1);
-  triangles(800,800);
+  triangles();
 
 }
 
 
 
-function triangles (w, h) {
+function triangles () {
 
-  // will attempt to use Delaunay triangulation to solve this
   let MAX = Math.random()*20 + 100;
   let arrX = [];
   let arrY = [];
 
   for (let i = 0; i < MAX; i++) {
-    let ranX = Math.floor(Math.random()*w);
-    let ranY = Math.floor(Math.random()*h);
+    let ranX = Math.floor(Math.random()*width);
+    let ranY = Math.floor(Math.random()*height);
     
     arrX.push(ranX);
     arrY.push(ranY);
@@ -46,12 +45,12 @@ function triangles (w, h) {
   stroke("#a8324e");
   strokeWeight(1);
 
-  for (let i = 0; i < h; i++) {
-    for (let j = 0; j < w; j++) {
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
 
 
-      let lowest1 = w+h;
-      let lowest2 = w+h;
+      let lowest1 = width + height;
+      let lowest2 = width + height;
       
       x1 = 0;
       x2 = 0;
@@ -76,7 +75,7 @@ function triangles (w, h) {
 
       }
 
-      if ((lowest2 - lowest1) <= 1) { // if 2 loweset distance points are very close (<=1 magnitude apart), draw a point there
+      if ((lowest2 - lowest1) <= 1) { // if 2 lowest distance points are very close (<=1 magnitude apart), draw a point there
         
         // uncomment the following to see the voronoi graph 
         //stroke('#3258a8');

@@ -21,12 +21,12 @@ function draw () {
 
 
 
-function pointValid (x, y, arr, xLimit, yLimit) {
-  if (x >= (xLimit - 1)) {
+function pointValid (x, y, arr) {
+  if (x >= (width - 1)) {
     return false;
   }
 
-  if (y >= (yLimit - 1)) {
+  if (y >= (height - 1)) {
     return false;
   }
 
@@ -45,8 +45,8 @@ function pointValid (x, y, arr, xLimit, yLimit) {
   return true;
 }
 
-function xCollides (val, y, h, arr, xLimit) {
-  if (val > (xLimit - 1)) {
+function xCollides (val, y, h, arr) {
+  if (val > (width - 1)) {
     return true;
   } 
 
@@ -60,8 +60,8 @@ function xCollides (val, y, h, arr, xLimit) {
   return false;
 }
 
-function yCollides (val, x, w, arr, yLimit) {
-  if (val > (yLimit - 1)) {
+function yCollides (val, x, w, arr) {
+  if (val > (height - 1)) {
     return true;
   } 
 
@@ -77,7 +77,7 @@ function yCollides (val, x, w, arr, yLimit) {
 }
 
 
-function randomRectangles (w, h) {
+function randomRectangles () {
 
   let MAX = 150;
   let arrX = [];
@@ -85,8 +85,8 @@ function randomRectangles (w, h) {
 
 
   for (let i = 0; i < MAX; i++) {
-    let ranX = Math.floor(Math.random()*w);
-    let ranY = Math.floor(Math.random()*h);
+    let ranX = Math.floor(Math.random()*width);
+    let ranY = Math.floor(Math.random()*height);
     
     arrX.push(ranX);
     arrY.push(ranY);
@@ -107,7 +107,7 @@ function randomRectangles (w, h) {
 
     // valid point check - point doesn't begin in the border of another square
 
-    if (pointValid(x, y, squares, w, h)) {
+    if (pointValid(x, y, squares)) {
 
       while (xHit == false || yHit == false) {
         if (xHit == false) {
@@ -156,14 +156,14 @@ function randomRectangles (w, h) {
         // side collision
 
         if (xHit == false) {
-          if (xCollides(x + rectW + 1, y, rectH, squares, w)) {
+          if (xCollides(x + rectW + 1, y, rectH, squares)) {
             xHit = true;
           }
           
         }
 
         if (yHit == false) {
-          if (yCollides(y + rectH + 1, x, rectW, squares, h)) {
+          if (yCollides(y + rectH + 1, x, rectW, squares)) {
             yHit = true;
           }
           
