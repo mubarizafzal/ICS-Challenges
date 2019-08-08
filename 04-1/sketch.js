@@ -9,6 +9,8 @@
  */
 
 
+// a hundred random points
+
 function setup () {
   createCanvas(500,500);
   pixelDensity(1);

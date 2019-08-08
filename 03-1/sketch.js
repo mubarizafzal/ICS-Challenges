@@ -16,7 +16,7 @@ function setup () {
   pixelDensity(1);
   rectMode(CORNERS);
   strokeWeight(2);
-  textSize(30);
+  textSize(20);
   x = Math.floor(Math.random()*width);
   y = Math.floor(Math.random()*height);
 
@@ -27,7 +27,7 @@ function draw () {
 
   
   fill(0);
-  text(perimeter(x, y, mouseX, mouseY), width/2, 30);
+  text("Perimeter : " + perimeter(x, y, mouseX, mouseY), width/2, 30);
   
   noFill();
   rect(x, y, mouseX, mouseY);
