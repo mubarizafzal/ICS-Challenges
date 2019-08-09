@@ -8,8 +8,20 @@ I begin with the third challenge in the second folder.
 
 02-3 : Random Rectangles
 
-![02-3.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/02-3.png)
+![02-3.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/images/02-3.png)
 
 02-4 : Random Triangles
 
-![02-4.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/02-4.png)
+![02-4.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/images/02-4.png)
+
+03-1 : Rectangle's Perimeter (Shape determined by mouse location)
+
+![03-1.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/images/03-1.png)
+
+03-2 : Area of Divided Rectangles (Divisions affected by mouse location)
+
+![03-2.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/images/03-2.png)
+
+03-3 : Difference of the Area of a Rectangle and Circle (Circle size determined by mouse location)
+
+![03-3.png](https://raw.githubusercontent.com/mubarizafzal/ICS-Challenges/master/images/03-3.png)
