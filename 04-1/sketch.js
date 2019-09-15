@@ -61,7 +61,10 @@ function draw () {
       arrY.push(ranY);
     }
   }
-
+  
+  // need to loop pixel array, 
+  // last circle that contains that pixel  
+  
   noFill();
   for (let i = 0; i < arrX.length; i++) {
     if (arrR[i] >= 200) {

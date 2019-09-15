@@ -1,5 +1,6 @@
 /**
- * Problem: 
+ * Problem: Create a program that draws 100 circles with a partial transparency.
+ *          After drawing the 100 circles, search for any overlapping areas and display a count of the total amount of pixels in the overlapping areas.
  * 
  * Notes: 
  * 
