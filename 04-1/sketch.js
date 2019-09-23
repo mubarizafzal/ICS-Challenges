@@ -31,7 +31,6 @@ function draw () {
   let MAX = 100;
   let arrX = [];
   let arrY = [];
-  let arrR = [];
 
   for (let i = 0; i < MAX; i++) {
     let ranX = Math.floor(Math.random()*width);
@@ -40,39 +39,56 @@ function draw () {
     let r = Math.floor(Math.random()*255);
     let g = Math.floor(Math.random()*255);
     let b = Math.floor(Math.random()*255);
-    
+
     fill(r, g, b);
     circle(ranX, ranY, 30);
 
-    if (arrX.includes(ranX)) {
-      let index = arrX.indexOf(ranX);
-      if (arrY[index] == ranY) {
-        // same cords
-        arrR[index] = r;
-
-      } else {
-        arrR.push(r);
-        arrX.push(ranX);
-        arrY.push(ranY);
-      }
-    } else {
-      arrR.push(r);
+    if (r > 150) {
+      
       arrX.push(ranX);
       arrY.push(ranY);
     }
+
   }
-  
+
   // need to loop pixel array, 
   // last circle that contains that pixel  
   
   noFill();
-  for (let i = 0; i < arrX.length; i++) {
-    if (arrR[i] >= 200) {
-      let x = arrX[i];
-      let y = arrY[i];
+  loadPixels();
 
-      rect(x, y, 30, 30);
+  let count = 0;
+  let redVal;
+  for (let i = 0; i < pixels.length; i = i + 4) {
+    
+    // only do another check if next pixel colour is different
+    if (pixels[i] != redVal) {
+      redVal = pixels[i];
+
+      if (pixels[i] > 150 ) {
+        let x = count % width;
+        let y = floor(count/width);
+  
+        let tempX, tempY;
+        for (let j = 0; j < arrX.length; j++) {
+          if (dist(x, y, arrX[j], arrY[j]) < 15) {
+            tempX = arrX[j];
+            tempY = arrY[j];
+  
+          }
+  
+        rect(tempX, tempY, 30, 30);
+  
+        }
+  
+      }
+
+    
     }
+
+
+    
+    count++;
   }
 
 }
