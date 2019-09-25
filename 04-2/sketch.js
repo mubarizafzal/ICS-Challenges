@@ -20,5 +20,30 @@ function setup () {
 
 function draw () {
   background(255);
+  noLoop();
+  
+  
+  for (let i = 0; i < 100; i++) {
+    let ranX = Math.random()*width;
+    let ranY = Math.random()*height;
+
+    fill(150,150,150, 50);
+    circle(ranX, ranY, 30);
+  }
+  
+
+
+  loadPixels();
+  
+  let count = 0;
+    
+  for (let i = 0; i < pixels.length; i = i + 4) {
+
+    let gray = pixels[i];
+    if (gray < 230 && gray > 160) {
+      count++;
+    }
+  }
+  console.log(count);
 
 }
