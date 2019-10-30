@@ -3,7 +3,7 @@
  *          After drawing the 100 circles, search for any pixel on the screen that has a red value greater than 150,
  *          and draw a rectangle around the circles in order to highlight them.
  * 
- * Notes: 
+ * Notes: Very slow
  * 
  * 
  */
@@ -51,8 +51,6 @@ function draw () {
 
   }
 
-  // need to loop pixel array, 
-  // last circle that contains that pixel  
   
   noFill();
   loadPixels();
@@ -67,9 +65,10 @@ function draw () {
 
       if (pixels[i] > 150 ) {
         let x = count % width;
-        let y = floor(count/width);
-  
+        let y = floor(count/width);  
         let tempX, tempY;
+
+        // loops to find the last circle (which guarantees its on top) that contains the point
         for (let j = 0; j < arrX.length; j++) {
           if (dist(x, y, arrX[j], arrY[j]) < 15) {
             tempX = arrX[j];
@@ -80,13 +79,8 @@ function draw () {
         rect(tempX, tempY, 30, 30);
   
         }
-  
       }
-
-    
     }
-
-
     
     count++;
   }

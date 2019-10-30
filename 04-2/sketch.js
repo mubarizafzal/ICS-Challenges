@@ -12,8 +12,8 @@ function setup () {
   createCanvas(500,500);
   pixelDensity(1);
   rectMode(CORNERS);
-  stroke(2);
-  textSize(20);
+  stroke(255);
+  textSize(15);
 
 }
 
@@ -40,10 +40,12 @@ function draw () {
   for (let i = 0; i < pixels.length; i = i + 4) {
 
     let gray = pixels[i];
-    if (gray < 230 && gray > 160) {
+    if (gray < 220) {
       count++;
     }
   }
-  console.log(count);
-
+  
+  fill(0);
+  text("Amount of pixels in shaded regions: " + count, 0, 20);
+ 
 }

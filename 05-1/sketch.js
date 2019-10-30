@@ -19,8 +19,12 @@ function setup () {
 
 }
 
+// key press
 
 function draw () {
+  noLoop();
   background(255);
 
+  let v = createVector(20,20);
+  console.log(v.mag());
 }
